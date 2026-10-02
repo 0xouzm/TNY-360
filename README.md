@@ -1,4 +1,4 @@
-> 🚀 TNY-360 V2 launches October 1, 2026.
+> 🚀 TNY-360 V2 Kits are available in preorders, shipping early december. [Get your kit here](https://store.tny-robotics.com).
 > 
 > The repository will be updated with the V2 release files and documentation at launch.
 
