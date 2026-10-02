@@ -25,7 +25,7 @@
 
 <div align="center">
 
-> ### **[👉 START HERE: The Official Step-by-Step Guide 👈](https://tny-robotics.com/docs/tny-360/practical-guide/sourcing)**
+> ### **[👉 START HERE: The Official Step-by-Step Guide 👈](https://tny-robotics.com/docs/tny-360/build-it)**
 > *From ordering the first screw to assembling the last part, this guide covers it all.*
 
 </div>
