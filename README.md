@@ -1,6 +1,6 @@
 > 🚀 TNY-360 V2 Kits are available in preorders, shipping early december. [Get your kit here](https://store.tny-robotics.com).
 > 
-> The repository will be updated with the V2 release files and documentation at launch.
+> The repository will be updated with the V2 files in a couple of days.
 
 ![Banner](./Extras/banner.png)
 
