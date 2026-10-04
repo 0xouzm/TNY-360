@@ -43,7 +43,7 @@ If you know what you are doing and just want the raw files, here is your toolkit
 
 ## ✨ Features
 
-* 🧬 **Dual-Core Architecture:**<br> A segregated system using the ESP32-S3. Core 0 ("Reflex") runs a strict 200Hz kinematics/control loop, while Core 1 ("Brain") handles WebSockets, UI, and orchestration.
+* 🧬 **Dual-Core Architecture:**<br> A segregated system using the ESP32-S3. Core 1 ("Reflex") runs a strict 200Hz kinematics/control loop, while Core 0 ("Brain") handles WebSockets, UI, and orchestration.
 * 🔄 **Closed-Loop at 200Hz:**<br> We ditched blind PWM. The TNY-360 uses digital MG996R servos modified with a custom **Op-Amp buffer PCB** for noise-free, high-speed position feedback.
 * ⚡ **Zero Cable Spaghetti:**<br> A fully modular hardware ecosystem. Dedicated PCBs (Control, Sensor, Brain, Power, etc.) communicate cleanly via JST cables and low profile pin headers.
 * 🛠️ **Smart Auto-Calibration:**<br> Features mechanical endstops for assembly validation and runtime algorithms that compensate for backlash and actuator latency.
