@@ -1,50 +1,53 @@
+> 🚀 TNY-360 V2 Kits are available in preorders, shipping early december. [Get your kit here](https://store.tny-robotics.com).
+> 
+> The repository will be updated with the V2 files in a couple of days.
+
 ![Banner](./Extras/banner.png)
 
 <div align="center">
 
-# TNY-360 Quadruped Robot
+# TNY-360 - Open-Source Robot Dog
 
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 [![Platform](https://img.shields.io/badge/Platform-ESP32--S3-blue)](https://espressif.com)
 [![Framework](https://img.shields.io/badge/Framework-ESP--IDF-orange)](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/)
 [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/TNY-Robotics/TNY-360)
 
-**A compact, open-source robot dog designed to *Understand*, *Interact*, and *Learn*.**
+**The open-source quadruped you can actually *build*, *repair* and *modify* yourself.**
 
-[🌐 Website](https://tny-robotics.com/tny-360) • [📸 Instagram](https://instagram.com/furwaz_) • [💬 Discord](https://discord.gg/XGABkx5A4y) • [📖 Documentation](https://tny-robotics.com/docs/tny-360/) • [☕ Support Us](https://ko-fi.com/tnyrobotics)
+[🌐 Website](https://tny-robotics.com/tny-360) • [📖 Documentation](https://tny-robotics.com/docs/tny-360/) • [💬 Discord](https://discord.gg/XGABkx5A4y) • [☕ Support Us](https://ko-fi.com/tnyrobotics)
 
 </div>
 
----
+<br />
 
-## 🚀 How to Build Your Own TNY-360
-
-Everything you need to build this robot is 100% free and open-source. Instead of getting lost in the folders, we highly recommend following our official, step-by-step wiki:
+# 🛠️ Want to build one?
 
 <div align="center">
 
-> ### **[👉 START HERE: The Official Step-by-Step Guide 👈](https://tny-robotics.com/docs/tny-360/practical-guide/sourcing)**
-> *From ordering the first screw to the assembing the last part, this guide covers it all.*
+> ### **[👉 START HERE: The Official Step-by-Step Guide 👈](https://tny-robotics.com/docs/tny-360/build-it)**
+> *From ordering the first screw to assembling the last part, this guide covers it all.*
 
 </div>
+
+<br />
 
 ### 🗂️ Quick Links (For Advanced Makers)
 If you know what you are doing and just want the raw files, here is your toolkit:
 
-* 🛒 **[Bill of Materials (BOM)](https://tny-robotics.com/docs/tny-360/practical-guide/1.sourcing/)** - What to buy, tools needed, and where to find them.
-* 📐 **[CAD & 3D Files](./CAD)** - Grab the `.STL` and `.3MF` files for your 3D printer.
-* ⚡ **[PCB Designs (Gerbers)](./Electronics/PCBs)** - Files to order the custom PCBs used in the robot.
+* 🛒 **[Bill of Materials](https://tny-robotics.com/docs/tny-360/archive/v1/practical-guides/sourcing/)** - What to buy, tools needed, and where to find them. (coming soon for V2)
+* 📐 **[CAD & 3D Files](./CAD)** - Grab the `.STL` and `.3MF` files for your 3D printer. (coming soon for V2)
+* ⚡ **[PCB Designs (Gerbers)](./PCBs)** - Files to order the custom PCBs used in the robot. (coming soon for V2)
 * 🧠 **[ESP32 Firmware](./Firmware)** - The ESP-IDF C++ firmware & drivers powering the robot.
-* 🛠️ **[Servo Modding Tutorial](https://tny-robotics.com/docs/tny-360/anatomy/electronics/mg996r-mod)** - Learn the Op-Amp trick to get position-feedback on MG996R servos.
+* 🛠️ **[Servo Modding Tutorial](https://tny-robotics.com/docs/tny-360/archive/v1/practical-guides/sourcing/motors/)** - Learn the Op-Amp trick to get position-feedback on MG996R servos.
 
 ## ✨ Features
 
-* 🧬 **Dual-Core Architecture:**<br> A segregated system using the ESP32-S3. Core 0 ("Reflex") runs a strict 200Hz kinematics/control loop, while Core 1 ("Brain") handles WebSockets, UI, and orchestration.
+* 🧬 **Dual-Core Architecture:**<br> A segregated system using the ESP32-S3. Core 1 ("Reflex") runs a strict 200Hz kinematics/control loop, while Core 0 ("Brain") handles WebSockets, UI, and orchestration.
 * 🔄 **Closed-Loop at 200Hz:**<br> We ditched blind PWM. The TNY-360 uses digital MG996R servos modified with a custom **Op-Amp buffer PCB** for noise-free, high-speed position feedback.
-* ⚡ **Zero Cable Spaghetti:**<br> A fully modular hardware ecosystem. Dedicated PCBs (Control, Sensor, Brain, Power, etc.) communicate cleanly via standardized JST-PH cables.
+* ⚡ **Zero Cable Spaghetti:**<br> A fully modular hardware ecosystem. Dedicated PCBs (Control, Sensor, Brain, Power, etc.) communicate cleanly via JST cables and low profile pin headers.
 * 🛠️ **Smart Auto-Calibration:**<br> Features mechanical endstops for assembly validation and runtime algorithms that compensate for backlash and actuator latency.
 * 🧩 **STEM & Expansion Ready:**<br> Program the robot using [TNY-Coder](https://github.com/TNY-Robotics/TNY-Coder) (our block-based web app) or build custom hardware modules using the dorsal I2C/Power expansion port.
-* 🔋 **Industrial Power:**<br> A custom 3S 18650 battery pack capable of 15A continuous discharge, featuring an integrated BMS and Fuse, for 1h+ of runtime.
 
 ## ⚙️ Hardware Specs
 
@@ -55,14 +58,14 @@ If you know what you are doing and just want the raw files, here is your toolkit
 
 ### 🦵 Actuators
 * **Legs:** 12x MG996R Servos *(Must be modified for analog feedback)*
-* **Head:** 2x SG-90 Micro Servos (Ears)
+* **Head:** 2x ~~SG-90~~ MG90D Micro Servos (Ears)
 * **Driver:** PCA9685 (16-Channel PWM)
 
 ### 📡 Sensors & I/O
 * **Vision:** OV2640 Camera Module
 * **Distance:** VL53L0X Time-of-Flight (Lidar)
-* **Orientation:** MPU6050 6-axis IMU
-* **Display:** SH1106 OLED (128x64)
+* **Orientation:** ~~MPU6050~~ LSM6DS3 6-axis IMU
+* **Display:** ~~SH1106~~ SSD1306 OLED (128x64) 
 * **Audio:** I2S MEMS Microphone + Speaker
 
 ---
@@ -70,8 +73,8 @@ If you know what you are doing and just want the raw files, here is your toolkit
 ## 📂 Repository Structure
 
 * `BOM/` — **Bill of Materials.** Detailed lists of all components, PCBs, screws, and cables, with links.
-* `CAD/` — **Hardware Source.** FreeCAD project files and ready-to-print STLs.
-* `Electronics/PCBs/` — **PCB Designs.** Gerber files, BOMs, and Pick'n'Place for all PCBs.
+* `CAD/` — **Hardware Source.** FreeCAD project files and ready-to-print STLs. (coming soon for V2)
+* `PCBs/` — **PCB Designs.** Gerber files, BOMs, and Pick'n'Place for all PCBs. (coming soon for V2)
 * `Firmware/` — **Codebase.** PlatformIO project (C++/ESP-IDF).
 * `Firmware/components/` — **Drivers.** Custom libraries for sensors/actuators.
 

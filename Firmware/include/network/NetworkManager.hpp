@@ -4,6 +4,7 @@
 #include "network/WebInterface.hpp"
 #include "network/WebSocket.hpp"
 #include "network/UpdateManager.hpp"
+#include "network/DNSServer.hpp"
 
 class NetworkManager
 {
@@ -23,6 +24,12 @@ public:
      * @return Error code indicating success or failure.
      */
     Status deinit();
+
+    /**
+     * @brief Start the network manager, enabling Wi-Fi and other network services.
+     * @return Error code indicating success or failure.
+     */
+    Status start();
 
     /**
      * @brief Get the WiFiManager instance.
@@ -53,4 +60,6 @@ private:
     WebInterface web_interface;
     WebSocket web_socket;
     UpdateManager update_manager;
+
+    DNSServer dnsServer;
 };

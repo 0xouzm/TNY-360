@@ -1,5 +1,6 @@
 #include "network/NetworkManager.hpp"
 #include "network/protocol/Protocol.hpp"
+#include "diagnostic/Diagnostic.hpp"
 #include "common/Log.hpp"
 #include "Robot.hpp"
 
@@ -42,11 +43,39 @@ Status NetworkManager::init()
         return err;
     }
 
+    // Initialize the DNS server for captive portal functionality
+    if (Status err = dnsServer.init(); err != Status::Ok)
+    {
+        return err;
+    }
+
+    return Status::Ok;
+}
+
+Status NetworkManager::start()
+{
+    if (Diagnostic::IsDiagnosticModeEnabled())
+    {
+        // In diagnostic mode, start the WiFi manager in AP mode only (no STA connection)
+        wifi_manager.startAP();
+    }
+    else
+    {
+        // Start the WiFi manager as normal (try to connect to STA, else fallback to AP)
+        wifi_manager.connectToAP();
+    }
+
     return Status::Ok;
 }
 
 Status NetworkManager::deinit()
 {
+    // Deinitialize the DNS server
+    if (Status err = dnsServer.deinit(); err != Status::Ok)
+    {
+        return err;
+    }
+
     // Deinitialize the protocol system
     if (Status err = Protocol::Deinit(); err != Status::Ok)
     {
