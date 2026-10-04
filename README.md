@@ -35,7 +35,7 @@
 ### 🗂️ Quick Links (For Advanced Makers)
 If you know what you are doing and just want the raw files, here is your toolkit:
 
-* 🛒 **[Bill of Materials https://tny-robotics.com/docs/tny-360/archive/v1/practical-guides/sourcing/)** - What to buy, tools needed, and where to find them. (coming soon for V2)
+* 🛒 **[Bill of Materials](https://tny-robotics.com/docs/tny-360/archive/v1/practical-guides/sourcing/)** - What to buy, tools needed, and where to find them. (coming soon for V2)
 * 📐 **[CAD & 3D Files](./CAD)** - Grab the `.STL` and `.3MF` files for your 3D printer. (coming soon for V2)
 * ⚡ **[PCB Designs (Gerbers)](./PCBs)** - Files to order the custom PCBs used in the robot. (coming soon for V2)
 * 🧠 **[ESP32 Firmware](./Firmware)** - The ESP-IDF C++ firmware & drivers powering the robot.
